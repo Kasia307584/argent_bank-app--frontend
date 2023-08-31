@@ -1,5 +1,6 @@
 import { useState } from "react";
 // import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function SignInForm() {
   // je garde useState ici
@@ -7,9 +8,13 @@ export default function SignInForm() {
   const [userPassword, setUserPassword] = useState("");
   const [rememberMe, setRememberMe] = useState(false);
 
-  // tu peux stocker ton token dans localStorage avant de passer au Redux
-  // dans handleSubmit utilise deux arguments ou un objet
-  async function handleFormSubmit() {
+  const navigate = useNavigate();
+
+  // const [datas, setDatas] = useState();
+  // const dispatch = useDispatch()
+
+  async function handleFormSubmit(event) {
+    event.preventDefault();
     fetch("http://localhost:3001/api/v1/user/login", {
       method: "post",
       headers: {
@@ -20,9 +25,16 @@ export default function SignInForm() {
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
-        localStorage.setItem("token", JSON.stringify(data.token));
+        localStorage.setItem("token", data.body.token);
+        navigate("/profile");
+        // setDatas(data);
+        // dispatch(setToken())
       });
   }
+
+  // useEffect(() => {
+  //   console.log(datas);
+  // }, [datas]);
 
   return (
     <form onSubmit={handleFormSubmit}>

@@ -2,22 +2,26 @@ import "../../style/style.css";
 import { useState, useEffect } from "react";
 
 export default function ProfileView() {
-  // const [userData, setUserData] = useState();
-
   async function fetchData() {
-    fetch("http://localhost:3001/api/v1/user/profile", {
+    return fetch("http://localhost:3001/api/v1/user/profile", {
       method: "post",
       headers: {
         Authorization: `Bearer  ${localStorage.getItem("token")}`,
+        // store.getState()
+        // ou {token} depuis const token = useSelector(state => state.token)
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ token: localStorage.getItem("token") }),
     }).then((response) => response.json());
   }
 
-  // faut faire un post et pas get pour retourner user profil (firstName et lastName) => a la fin c'est ds le redux
+  // const dispatch = useDispatch()
+  // const name = useSelector(state => state.firstName)
+
   useEffect(() => {
-    fetchData().then((data) => console.log(data));
+    fetchData().then((data) => {
+      console.log(data);
+      // dispatch(setData(data))
+    });
   }, []);
 
   // ici on garde useState
@@ -33,6 +37,7 @@ export default function ProfileView() {
             Welcome back
             <br />
             {editing ? "<FormPourChangerNom/>" : "Tony Jarvis!"}
+            {/* {name} */}
           </h1>
           <button className="edit-button" onClick={() => setEditing(true)}>
             Edit Name
