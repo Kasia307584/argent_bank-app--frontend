@@ -1,14 +1,16 @@
 import { useState } from "react";
-import { useSelector } from "react-redux";
-import { store } from "../store/store";
+import { setData } from "../store/store";
+import { useSelector, useDispatch } from "react-redux";
 
-export default function EditNameForm() {
+export default function EditNameForm({ setEditing }) {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
 
   const token = useSelector((state) => state.token.token);
   const currentFirstName = useSelector((store) => store.userData.firstName);
   const currentLastName = useSelector((store) => store.userData.lastName);
+
+  const dispatch = useDispatch();
 
   async function handleFormSubmit(event) {
     event.preventDefault();
@@ -22,7 +24,8 @@ export default function EditNameForm() {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
+        setEditing(false);
+        dispatch(setData(data.body));
       });
   }
 
