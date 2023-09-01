@@ -38,4 +38,4 @@ const store = configureStore({
 const { setToken } = tokenSlice.actions;
 const { setData } = userDataSlice.actions;
 
-export { setToken, setData };
+export { setToken, setData, store };
