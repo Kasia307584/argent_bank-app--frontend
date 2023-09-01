@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { store, setToken } from "../store/store";
+import { setToken } from "../store/store";
 import { useDispatch } from "react-redux";
 
 export default function SignInForm() {
@@ -24,7 +24,6 @@ export default function SignInForm() {
       .then((data) => {
         navigate("/profile");
         dispatch(setToken(data.body.token));
-        // store.dispatch(setToken(data.body.token))
       });
   }
 

@@ -7,7 +7,7 @@ const tokenSlice = createSlice({
   },
   reducers: {
     setToken: (state, action) => {
-      console.log(action.payload); // token string
+      console.log(action.payload);
       state.token = action.payload;
     },
   },
@@ -21,7 +21,7 @@ const userDataSlice = createSlice({
   },
   reducers: {
     setData: (state, action) => {
-      console.log(action.payload); // user data
+      console.log(action.payload);
       state.firstName = action.payload.firstName;
       state.lastName = action.payload.lastName;
     },
@@ -38,4 +38,4 @@ const store = configureStore({
 const { setToken } = tokenSlice.actions;
 const { setData } = userDataSlice.actions;
 
-export { store, setToken, setData };
+export { setToken, setData };

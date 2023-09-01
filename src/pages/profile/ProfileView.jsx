@@ -1,14 +1,12 @@
 import "../../style/style.css";
 import { useState, useEffect } from "react";
-import { store, setData } from "../../store/store";
+import { setData } from "../../store/store";
 import { useSelector, useDispatch } from "react-redux";
 
 export default function ProfileView() {
   const token = useSelector((state) => state.token.token);
   const name = useSelector((state) => state.userData.firstName);
   const dispatch = useDispatch();
-  // const token = store.getState().token.token
-  // const name = store.getState().userData.firstName;
 
   async function fetchData() {
     return fetch("http://localhost:3001/api/v1/user/profile", {
