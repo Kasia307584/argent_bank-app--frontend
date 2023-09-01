@@ -1,17 +1,15 @@
 import { useState } from "react";
-// import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { store, setToken } from "../store/store";
+import { useDispatch } from "react-redux";
 
 export default function SignInForm() {
-  // je garde useState ici
   const [userName, setUserName] = useState("");
   const [userPassword, setUserPassword] = useState("");
   const [rememberMe, setRememberMe] = useState(false);
 
   const navigate = useNavigate();
-
-  // const [datas, setDatas] = useState();
-  // const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   async function handleFormSubmit(event) {
     event.preventDefault();
@@ -24,17 +22,11 @@ export default function SignInForm() {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
-        localStorage.setItem("token", data.body.token);
         navigate("/profile");
-        // setDatas(data);
-        // dispatch(setToken())
+        dispatch(setToken(data.body.token));
+        // store.dispatch(setToken(data.body.token))
       });
   }
-
-  // useEffect(() => {
-  //   console.log(datas);
-  // }, [datas]);
 
   return (
     <form onSubmit={handleFormSubmit}>
@@ -65,11 +57,9 @@ export default function SignInForm() {
         />
         <label htmlFor="remember-me">Remember me</label>
       </div>
-      {/* <Link to={`/profile`}> */}
       <button className="sign-in-button" type="submit">
         Sign In
       </button>
-      {/* </Link> */}
     </form>
   );
 }
