@@ -48,7 +48,9 @@ export default function EditNameForm({ setEditing }) {
       <button type="submit" className="edit-button">
         Save
       </button>
-      <button className="edit-button"> Cancel</button>
+      <button className="edit-button" onClick={() => setEditing(false)}>
+        Cancel
+      </button>
     </form>
   );
 }
