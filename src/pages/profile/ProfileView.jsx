@@ -1,30 +1,31 @@
 import "../../style/style.css";
 import { useState, useEffect } from "react";
+import { store, setData } from "../../store/store";
+import { useSelector, useDispatch } from "react-redux";
 
 export default function ProfileView() {
+  const token = useSelector((state) => state.token.token);
+  const name = useSelector((state) => state.userData.firstName);
+  const dispatch = useDispatch();
+  // const token = store.getState().token.token
+  // const name = store.getState().userData.firstName;
+
   async function fetchData() {
     return fetch("http://localhost:3001/api/v1/user/profile", {
       method: "post",
       headers: {
-        Authorization: `Bearer  ${localStorage.getItem("token")}`,
-        // store.getState()
-        // ou {token} depuis const token = useSelector(state => state.token)
+        Authorization: `Bearer  ${token}`,
         "Content-Type": "application/json",
       },
     }).then((response) => response.json());
   }
 
-  // const dispatch = useDispatch()
-  // const name = useSelector(state => state.firstName)
-
   useEffect(() => {
     fetchData().then((data) => {
-      console.log(data);
-      // dispatch(setData(data))
+      dispatch(setData(data.body));
     });
   }, []);
 
-  // ici on garde useState
   const [editing, setEditing] = useState(false);
 
   // ajouter put
@@ -36,8 +37,7 @@ export default function ProfileView() {
           <h1>
             Welcome back
             <br />
-            {editing ? "<FormPourChangerNom/>" : "Tony Jarvis!"}
-            {/* {name} */}
+            {editing ? "<FormPourChangerNom/>" : name}
           </h1>
           <button className="edit-button" onClick={() => setEditing(true)}>
             Edit Name

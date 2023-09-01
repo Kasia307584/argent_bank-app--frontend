@@ -13,26 +13,29 @@ const tokenSlice = createSlice({
   },
 });
 
-// const userDataSlice = createSlice({
-//   name: "userData",
-//   initialState: {
-//     firstName: "",
-//     lastName: "",
-//   },
-//   reducers: {
-//     setData: (state, action) => {
-//       state.firstName = action.payload.firstName;
-//       state.lastName = action.payload.lastName;
-//     },
-//   },
-// });
+const userDataSlice = createSlice({
+  name: "userData",
+  initialState: {
+    firstName: "",
+    lastName: "",
+  },
+  reducers: {
+    setData: (state, action) => {
+      console.log(action.payload); // user data
+      state.firstName = action.payload.firstName;
+      state.lastName = action.payload.lastName;
+    },
+  },
+});
 
 const store = configureStore({
-  reducer: { token: tokenSlice.reducer },
-  //   reducer: { token: tokenSlice.reducer, userData: userDataSlice.reducer },
+  reducer: {
+    token: tokenSlice.reducer,
+    userData: userDataSlice.reducer,
+  },
 });
 
 const { setToken } = tokenSlice.actions;
-// const { setData } = userDataSlice.actions;
+const { setData } = userDataSlice.actions;
 
-export { store, setToken };
+export { store, setToken, setData };
