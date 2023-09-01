@@ -2,6 +2,7 @@ import "../../style/style.css";
 import { useState, useEffect } from "react";
 import { setData } from "../../store/store";
 import { useSelector, useDispatch } from "react-redux";
+import EditNameForm from "../../components/EditNameForm";
 
 export default function ProfileView() {
   const token = useSelector((state) => state.token.token);
@@ -26,8 +27,6 @@ export default function ProfileView() {
 
   const [editing, setEditing] = useState(false);
 
-  // ajouter put
-
   return (
     <>
       <main className="main bg-dark">
@@ -35,7 +34,7 @@ export default function ProfileView() {
           <h1>
             Welcome back
             <br />
-            {editing ? "<FormPourChangerNom/>" : name}
+            {editing ? <EditNameForm /> : name}
           </h1>
           <button className="edit-button" onClick={() => setEditing(true)}>
             Edit Name
