@@ -34,11 +34,7 @@ export default function ProfileView() {
           <h1>
             Welcome back
             <br />
-            {editing ? (
-              <EditNameForm editing={editing} setEditing={setEditing} />
-            ) : (
-              name
-            )}
+            {editing ? <EditNameForm setEditing={setEditing} /> : name}
           </h1>
           <button className="edit-button" onClick={() => setEditing(true)}>
             Edit Name
