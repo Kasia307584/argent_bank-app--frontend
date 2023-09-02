@@ -10,7 +10,7 @@ export function useSignMethod(signMethod, setSignMethod) {
 }
 
 export default function Layout() {
-  const [signMethod, setSignMethod] = useState("");
+  const [signMethod, setSignMethod] = useState("Sign In");
 
   return (
     <>
@@ -26,11 +26,13 @@ export default function Layout() {
         <div>
           {signMethod === "Sign In" && (
             <Link to={"/login"} className="main-nav-item">
+              <i className="fa fa-user-circle"></i>
               {signMethod}
             </Link>
           )}
           {signMethod === "Sign Out" && (
             <Link to={"/"} className="main-nav-item">
+              <i className="fa fa-sign-out"></i>
               {signMethod}
             </Link>
           )}
