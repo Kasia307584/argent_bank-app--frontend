@@ -1,4 +1,3 @@
-import "../../style/style.css";
 import SignInForm from "../../components/SignInForm";
 import { useOutletContext } from "react-router-dom";
 import { useSignMethod } from "../layout/PagesLayout";

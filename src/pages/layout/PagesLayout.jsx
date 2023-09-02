@@ -1,5 +1,4 @@
 import { Outlet, Link } from "react-router-dom";
-import "../../style/style.css";
 import logo from "../../assets/argentBankLogo.png";
 import { useState, useEffect } from "react";
 
@@ -15,14 +14,14 @@ export default function Layout() {
   return (
     <>
       <nav className="main-nav">
-        <a className="main-nav-logo" href="./index.html">
+        <Link to={"/"} className="main-nav-logo">
           <img
             className="main-nav-logo-image"
             src={logo}
             alt="Argent Bank Logo"
           />
           <h1 className="sr-only">Argent Bank</h1>
-        </a>
+        </Link>
         <div>
           {signMethod === "Sign In" && (
             <Link to={"/login"} className="main-nav-item">

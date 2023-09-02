@@ -1,5 +1,8 @@
 import { useOutletContext } from "react-router-dom";
 import { useSignMethod } from "../layout/PagesLayout";
+import iconChat from "../../assets/icon-chat.png";
+import iconMoney from "../../assets/icon-money.png";
+import iconSecurity from "../../assets/icon-security.png";
 
 export default function HomeView({ signMethod }) {
   const { setSignMethod } = useOutletContext();
@@ -19,11 +22,7 @@ export default function HomeView({ signMethod }) {
       <section className="features">
         <h2 className="sr-only">Features</h2>
         <div className="feature-item">
-          <img
-            src="./img/icon-chat.png"
-            alt="Chat Icon"
-            className="feature-icon"
-          />
+          <img src={iconChat} alt="Chat Icon" className="feature-icon" />
           <h3 className="feature-item-title">You are our #1 priority</h3>
           <p>
             Need to talk to a representative? You can get in touch through our
@@ -31,11 +30,7 @@ export default function HomeView({ signMethod }) {
           </p>
         </div>
         <div className="feature-item">
-          <img
-            src="./img/icon-money.png"
-            alt="Chat Icon"
-            className="feature-icon"
-          />
+          <img src={iconMoney} alt="Money Icon" className="feature-icon" />
           <h3 className="feature-item-title">
             More savings means higher rates
           </h3>
@@ -45,8 +40,8 @@ export default function HomeView({ signMethod }) {
         </div>
         <div className="feature-item">
           <img
-            src="./img/icon-security.png"
-            alt="Chat Icon"
+            src={iconSecurity}
+            alt="Security Icon"
             className="feature-icon"
           />
           <h3 className="feature-item-title">Security you can trust</h3>

@@ -1,4 +1,3 @@
-import "../../style/style.css";
 import { useState, useEffect } from "react";
 import { setData } from "../../store/store";
 import { useSelector, useDispatch } from "react-redux";
