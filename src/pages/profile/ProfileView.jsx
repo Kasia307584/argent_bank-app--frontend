@@ -3,8 +3,13 @@ import { useState, useEffect } from "react";
 import { setData } from "../../store/store";
 import { useSelector, useDispatch } from "react-redux";
 import EditNameForm from "../../components/EditNameForm";
+import { useOutletContext } from "react-router-dom";
+import { useSignMethod } from "../layout/PagesLayout";
 
-export default function ProfileView() {
+export default function ProfileView({ signMethod }) {
+  const { setSignMethod } = useOutletContext();
+  useSignMethod(signMethod, setSignMethod);
+
   const token = useSelector((state) => state.token.token);
   const name = useSelector((state) => state.userData.firstName);
   const dispatch = useDispatch();

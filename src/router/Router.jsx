@@ -9,8 +9,8 @@ export default function Router() {
     <Routes>
       <Route path="/" element={<Layout />}>
         {/* <Route path="/" element={<Homepage/>}/> */}
-        <Route path="/login" element={<SignIn />} />
-        <Route path="/profile" element={<Profile />} />
+        <Route path="/login" element={<SignIn signMethod="Sign In" />} />
+        <Route path="/profile" element={<Profile signMethod="Sign Out" />} />
       </Route>
       <Route path="*" element={<Error />} />
     </Routes>
