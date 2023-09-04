@@ -40,9 +40,11 @@ export default function ProfileView({ signMethod }) {
             <br />
             {editing ? <EditNameForm setEditing={setEditing} /> : name}
           </h1>
-          <button className="edit-button" onClick={() => setEditing(true)}>
-            Edit Name
-          </button>
+          {!editing && (
+            <button className="edit-button" onClick={() => setEditing(true)}>
+              Edit Name
+            </button>
+          )}
         </div>
         <h2 className="sr-only">Accounts</h2>
         <section className="account">

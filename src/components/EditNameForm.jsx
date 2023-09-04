@@ -31,26 +31,35 @@ export default function EditNameForm({ setEditing }) {
 
   return (
     <form onSubmit={handleFormSubmit} className="edit-name-form">
-      <input
-        type="text"
-        id="first-name"
-        placeholder={currentFirstName}
-        value={firstName}
-        onChange={(e) => setFirstName(e.target.value)}
-      />
-      <input
-        type="text"
-        id="last-name"
-        placeholder={currentLastName}
-        value={lastName}
-        onChange={(e) => setLastName(e.target.value)}
-      />
-      <button type="submit" className="edit-button">
-        Save
-      </button>
-      <button className="edit-button" onClick={() => setEditing(false)}>
-        Cancel
-      </button>
+      <div>
+        <input
+          type="text"
+          id="first-name"
+          className="edit-input--form"
+          placeholder={currentFirstName}
+          value={firstName}
+          onChange={(e) => setFirstName(e.target.value)}
+        />
+        <input
+          type="text"
+          id="last-name"
+          className="edit-input--form"
+          placeholder={currentLastName}
+          value={lastName}
+          onChange={(e) => setLastName(e.target.value)}
+        />
+      </div>
+      <div>
+        <button type="submit" className="edit-button edit-button--form">
+          Save
+        </button>
+        <button
+          className="edit-button edit-button--form"
+          onClick={() => setEditing(false)}
+        >
+          Cancel
+        </button>
+      </div>
     </form>
   );
 }

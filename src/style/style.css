@@ -263,6 +263,19 @@ body {
   padding: 10px;
 }
 
+.edit-button--form {
+  background-color: #fff;
+  color: #00bc77;
+  width: 120px;
+  margin: 10px 8px 5px 8px;
+  padding: 7px;
+}
+.edit-input--form {
+  font-weight: bold;
+  padding: 10px;
+  margin: 10px 8px 5px 8px;
+}
+
 .header {
   color: #fff;
   margin-bottom: 2rem;
