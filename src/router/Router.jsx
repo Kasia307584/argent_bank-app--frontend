@@ -9,7 +9,7 @@ export default function Router() {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
-        <Route path="/" element={<Home signMethod="Sign In" />} />
+        <Route index element={<Home signMethod="Sign In" />} />
         <Route path="/login" element={<SignIn signMethod="Sign In" />} />
         <Route path="/profile" element={<Profile signMethod="Sign Out" />} />
       </Route>

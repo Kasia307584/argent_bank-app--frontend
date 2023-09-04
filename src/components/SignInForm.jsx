@@ -22,8 +22,10 @@ export default function SignInForm() {
     })
       .then((response) => response.json())
       .then((data) => {
-        navigate("/profile");
         dispatch(setToken(data.body.token));
+        if (data.body.token) {
+          navigate("/profile");
+        }
       });
   }
 
@@ -36,6 +38,8 @@ export default function SignInForm() {
           id="username"
           value={userName}
           onChange={(e) => setUserName(e.target.value)}
+          required
+          minLength={2}
         />
       </div>
       <div className="input-wrapper">
@@ -45,6 +49,8 @@ export default function SignInForm() {
           id="password"
           value={userPassword}
           onChange={(e) => setUserPassword(e.target.value)}
+          required
+          minLength={8}
         />
       </div>
       <div className="input-remember">
