@@ -7,9 +7,7 @@ export default function EditNameForm({ setEditing }) {
   const [lastName, setLastName] = useState("");
 
   const token = useSelector((state) => state.token.token);
-  const currentFirstName = useSelector((store) => store.userData.firstName);
-  const currentLastName = useSelector((store) => store.userData.lastName);
-
+  const userName = useSelector((store) => store.userData);
   const dispatch = useDispatch();
 
   async function handleFormSubmit(event) {
@@ -36,7 +34,7 @@ export default function EditNameForm({ setEditing }) {
           type="text"
           id="first-name"
           className="edit-input--form"
-          placeholder={currentFirstName}
+          placeholder={userName.firstName}
           value={firstName}
           onChange={(e) => setFirstName(e.target.value)}
         />
@@ -44,7 +42,7 @@ export default function EditNameForm({ setEditing }) {
           type="text"
           id="last-name"
           className="edit-input--form"
-          placeholder={currentLastName}
+          placeholder={userName.lastName}
           value={lastName}
           onChange={(e) => setLastName(e.target.value)}
         />

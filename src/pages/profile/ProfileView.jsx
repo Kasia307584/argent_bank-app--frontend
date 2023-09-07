@@ -10,7 +10,7 @@ export default function ProfileView({ signMethod }) {
   useSignMethod(signMethod, setSignMethod);
 
   const token = useSelector((state) => state.token.token);
-  const name = useSelector((state) => state.userData.firstName);
+  const name = useSelector((state) => state.userData);
   const dispatch = useDispatch();
 
   async function fetchData() {
@@ -38,7 +38,11 @@ export default function ProfileView({ signMethod }) {
           <h1>
             Welcome back
             <br />
-            {editing ? <EditNameForm setEditing={setEditing} /> : name}
+            {editing ? (
+              <EditNameForm setEditing={setEditing} />
+            ) : (
+              name.firstName + " " + name.lastName + "!"
+            )}
           </h1>
           {!editing && (
             <button className="edit-button" onClick={() => setEditing(true)}>
