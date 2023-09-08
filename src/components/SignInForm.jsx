@@ -34,12 +34,11 @@ export default function SignInForm() {
       <div className="input-wrapper">
         <label htmlFor="username">Username</label>
         <input
-          type="text"
+          type="email"
           id="username"
           value={userName}
           onChange={(e) => setUserName(e.target.value)}
           required
-          minLength={2}
         />
       </div>
       <div className="input-wrapper">
@@ -50,7 +49,6 @@ export default function SignInForm() {
           value={userPassword}
           onChange={(e) => setUserPassword(e.target.value)}
           required
-          minLength={8}
         />
       </div>
       <div className="input-remember">
