@@ -1,6 +1,7 @@
 import { Outlet, Link } from "react-router-dom";
 import logo from "../../assets/argentBankLogo.png";
 import { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
 
 export function useSignMethod(signMethod, setSignMethod) {
   useEffect(() => {
@@ -10,6 +11,8 @@ export function useSignMethod(signMethod, setSignMethod) {
 
 export default function Layout() {
   const [signMethod, setSignMethod] = useState("Sign In");
+
+  const name = useSelector((state) => state.userData);
 
   return (
     <>
@@ -23,6 +26,12 @@ export default function Layout() {
           <h1 className="sr-only">Argent Bank</h1>
         </Link>
         <div>
+          {signMethod === "Sign Out" && (
+            <span className="main-nav-user">
+              <i className="fa fa-user-circle"></i>
+              {name.firstName}
+            </span>
+          )}
           {signMethod === "Sign In" && (
             <Link to={"/login"} className="main-nav-item">
               <i className="fa fa-user-circle"></i>
