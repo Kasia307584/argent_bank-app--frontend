@@ -1,0 +1,166 @@
+openapi: "3.0.0"
+info:
+  title: Bank Argent API transaction module documentation
+  description: Contains transaction module API endpoints in the codebase
+  version: "1.0.0"
+servers:
+  - url: http://localhost:3001/api/v1
+paths:
+  /accounts/{accountId}/transactions:
+    get:
+      tags:
+        - Transaction Module
+      summary: Account transactions API
+      description: API for fetching account last month transactions
+      parameters:
+        - in: header
+          name: Authorization
+          schema:
+            type: string
+          description: Attach Bearer JWT token
+          required: true
+        - in: path
+          name: accountId
+          schema:
+            type: integer
+            minimum: 1
+          description: The account ID
+          required: true
+        - in: query
+          name: month
+          schema:
+            type: string
+            default: current
+          description: The month for which to return items
+        - in: query
+          name: order
+          schema:
+            type: string
+            default: asc
+          description: The order in which to return items
+      responses:
+        "200":
+          description: Account transactions retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TransactionsResponse"
+        "400":
+          description: Invalid Fields
+        "500":
+          description: Internal Server Error
+  /accounts/{accountId}/transactions/{transactionId}:
+    get:
+      tags:
+        - Transaction Module
+      summary: Transaction details API
+      description: API for fetching details of a transaction
+      parameters:
+        - in: header
+          name: Authorization
+          schema:
+            type: string
+          description: Attach Bearer JWT token
+          required: true
+        - in: path
+          name: accountId
+          schema:
+            type: integer
+            minimum: 1
+          description: The account ID
+          required: true
+        - in: path
+          name: transactionId
+          schema:
+            type: integer
+            minimum: 1
+          description: The transaction ID
+          required: true
+      responses:
+        "200":
+          description: Transaction details retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DetailsResponse"
+        "400":
+          description: Invalid Fields
+        "500":
+          description: Internal Server Error
+    put:
+      tags:
+        - Transaction Module
+      summary: Transaction details API
+      description: API for updating details of a transaction
+      parameters:
+        - in: header
+          name: Authorization
+          schema:
+            type: string
+          description: Attach Bearer JWT token
+          required: true
+        - in: path
+          name: accountId
+          schema:
+            type: integer
+            minimum: 1
+          description: The account ID
+          required: true
+        - in: path
+          name: transactionId
+          schema:
+            type: integer
+            minimum: 1
+          description: The transaction ID
+          required: true
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Detail"
+        description: Update transaction details
+        required: true
+      responses:
+        "200":
+          description: Transaction details updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DetailsResponse"
+        "400":
+          description: Invalid Fields
+        "500":
+          description: Internal Server Error
+components:
+  securitySchemes:
+    Bearer:
+      type: apiKey
+      name: Authorization
+      in: header
+  schemas:
+    Transaction:
+      type: object
+      properties:
+        id:
+          type: integer
+        date:
+          type: string
+        description:
+          type: string
+        amount:
+          type: integer
+        balance:
+          type: integer
+    Detail:
+      type: object
+      properties:
+        category:
+          type: string
+        notes:
+          type: string
+    TransactionsResponse:
+      type: array
+      items:
+        $ref: "#/components/schemas/Transaction"
+    DetailsResponse:
+      $ref: "#/components/schemas/Detail"
