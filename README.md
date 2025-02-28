@@ -24,6 +24,7 @@ Users should be able to:
 ### Links
 
 - Live Site URL: [See the live page here](https://argent-bank-snowy.vercel.app/)
+- API Transactions Documentation: [View the API proposal here](./api/swagger-transactions.yaml)
 
 ## My process
 
@@ -34,20 +35,22 @@ Users should be able to:
 - **React Redux** for managing state throughout the application
 - **REST API** for user authentication and authorization
 - **CSS3** and **BEM methodology** for styling and maintainable code structure
+- **Vite** for fast development and optimized builds
 - **Vercel** for seamless deployment and hosting
 
 ### What I learned
 
-- **Initialize with Vite**: Initialized the application using `Vite`
-- **Install Backend and Database**: Installed provided backend, populated a `MongoDB` database, and interacted with it through the GUI tool `MongoDB Compass`. Used `Node Version Manager` (`NVM`) to change Node.js versions depending of the project.
-- **Interact with APIs**: Worked with APIs to communicate with the server and retrieve data based on provided Swagger UI doucmentation, using `Postman` to test API calls
-- **Authenticate and Authorize Users**: Implemented token-base user authentication and authorization mechanisms
-- **Manage State Globaly**: Managed application state using React-Redux and Redux Toolkit, with hooks like `useDispatch` and `useSelector`
-- **Design REST APIs**: Designed a REST API for handling transactions, following the Swagger methodology, using VS Code extention OpenAPI and Swagger UI
-- **Use React Router Hooks**: Utilized hooks like `useNavigate`, `useOutletContext`, and a custom hook `useSignMethod` for enhanced sign-in functionality
+- Initializing the application using Vite.
+- Installing the provided backend, populating a MongoDB database, and interacting with it using MongoDB Compass.
+- Using NVM to switch Node.js versions for different parts of the project (front-end and back-end).
+- Interacting with APIs based on provided Swagger UI documentation, testing API calls with Postman.
+- Handling token-based user authentication and authorization.
+- Managing the application with global state using React Redux and Redux Toolkit, with hooks like `useDispatch` and `useSelector`.
+- Designing a REST API for handling transactions using the Swagger methodology to define the API structure, the OpenAPI extention in VS Code to facilitate writing, and Swagger UI to visualize the API. [View the API proposal here](./api/swagger-transactions.yaml).
+- Using React Router hooks like `useNavigate`, `useOutletContext`, and a custom hook `useSignMethod` for enhanced sign-in functionality.
 
 ### Continued development
 
-- keep the user session by utilizing localStorage to persist data
-- remove hardcoded data when interacting with API by creating a `constants` file to store base URLs and API enpoints for easier maintenance and readability
-- ensure that when editing the user's first name, the previously set last name remains unchanged
+- Keep the user session by utilizing localStorage to persist data.
+- Remove hardcoded data when interacting with API by creating a `constants` file to store base URLs and API enpoints for easier maintenance and readability.
+- Ensure that when editing the user's first name, the previously set last name remains unchanged.
