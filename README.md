@@ -24,6 +24,7 @@ Users should be able to:
 ### Links
 
 - Live Site URL: [See the live page here](https://argent-bank-snowy.vercel.app/)
+- Backend Repository: [Forked backend used in this project](https://github.com/Kasia307584/argent_bank-app--backend.git)
 - API Transactions Documentation: [View the API proposal here](./api/api-transactions.yaml)
 
 ## My process
@@ -32,8 +33,7 @@ Users should be able to:
 
 - **React.js** for building the user interface
 - **React Router** for managing navigation and routing between pages
-- **React Redux** for managing state throughout the application
-- **REST API** for user authentication and authorization
+- **Redux Toolkit** and **React Redux** for managing global state in a React environement
 - **CSS3** and **BEM methodology** for styling and maintainable code structure
 - **Vite** for fast development and optimized builds
 - **Vercel** for seamless deployment and hosting
