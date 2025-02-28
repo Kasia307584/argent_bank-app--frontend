@@ -24,7 +24,7 @@ Users should be able to:
 ### Links
 
 - Live Site URL: [See the live page here](https://argent-bank-snowy.vercel.app/)
-- API Transactions Documentation: [View the API proposal here](./api/swagger-transactions.yaml)
+- API Transactions Documentation: [View the API proposal here](./api/api-transactions.yaml)
 
 ## My process
 
@@ -46,7 +46,7 @@ Users should be able to:
 - Interacting with APIs based on provided Swagger UI documentation, testing API calls with Postman.
 - Handling token-based user authentication and authorization.
 - Managing the application with global state using React Redux and Redux Toolkit, with hooks like `useDispatch` and `useSelector`.
-- Designing a REST API for handling transactions using the Swagger methodology to define the API structure, the OpenAPI extention in VS Code to facilitate writing, and Swagger UI to visualize the API. [View the API proposal here](./api/swagger-transactions.yaml).
+- Designing a REST API for handling transactions using the Swagger methodology to define the API structure, the OpenAPI extention in VS Code to facilitate writing, and Swagger UI to visualize the API. [View the API proposal here](./api/api-transactions.yaml).
 - Using React Router hooks like `useNavigate`, `useOutletContext`, and a custom hook `useSignMethod` for enhanced sign-in functionality.
 
 ### Continued development
