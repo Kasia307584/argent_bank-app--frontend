@@ -17,7 +17,7 @@ This app was developed as part of the [OpenClassrooms](https://openclassrooms.co
 Users should be able to:
 
 - Log in to the application
-- See thier welcoming page when loged in
+- See their welcoming page when loged in
 - Edit their personal informations and save them to a database
 - Log out from the application
 
@@ -33,24 +33,24 @@ Users should be able to:
 
 - **React.js** for building the user interface
 - **React Router** for managing navigation and routing between pages
-- **Redux Toolkit** and **React Redux** for managing global state in a React environement
+- **Redux Toolkit** and **React Redux** for managing global state in a React environment
 - **CSS3** and **BEM methodology** for styling and maintainable code structure
 - **Vite** for fast development and optimized builds
 - **Vercel** for seamless deployment and hosting
 
 ### What I learned
 
-- Initializing the application using Vite.
-- Installing the provided backend, populating a MongoDB database, and interacting with it using MongoDB Compass.
-- Using NVM to switch Node.js versions for different parts of the project (front-end and back-end).
-- Interacting with APIs based on provided Swagger UI documentation, testing API calls with Postman.
+- Interacting with APIs based on provided Swagger UI documentation and testing API calls with Postman.
 - Handling token-based user authentication and authorization.
-- Managing the application with global state using React Redux and Redux Toolkit, with hooks like `useDispatch` and `useSelector`.
 - Designing a REST API for handling transactions using the Swagger methodology to define the API structure, the OpenAPI extention in VS Code to facilitate writing, and Swagger UI to visualize the API. [View the API proposal here](./api/api-transactions.yaml).
+- Managing the application state globally using Redux Toolkit and React Redux, allowing access and updates to the Redux store with the `useDispatch` and `useSelector` hooks.
+- Installing the provided backend, populating a MongoDB database, and interacting with it using MongoDB Compass.
 - Using React Router hooks like `useNavigate`, `useOutletContext`, and a custom hook `useSignMethod` for enhanced sign-in functionality.
+- Using NVM to switch Node.js versions for different parts of the project (front-end and back-end).
+- Initializing the application using Vite.
 
 ### Continued development
 
 - Keep the user session by utilizing localStorage to persist data.
-- Remove hardcoded data when interacting with API by creating a `constants` file to store base URLs and API enpoints for easier maintenance and readability.
-- Ensure that when editing the user's first name, the previously set last name remains unchanged.
+- Remove hardcoded data when interacting with API by creating a `constants` file to store base URLs and API endpoints for easier maintenance and readability.
+- Ensure that when editing the user's first name, the previously set last name persists.
