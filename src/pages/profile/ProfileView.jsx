@@ -13,7 +13,7 @@ export default function ProfileView({ signMethod }) {
   const name = useSelector((state) => state.userData);
   const dispatch = useDispatch();
 
-  async function fetchData() {
+  function fetchData() {
     return fetch("http://localhost:3001/api/v1/user/profile", {
       method: "post",
       headers: {

@@ -11,7 +11,7 @@ export default function SignInForm() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  async function handleFormSubmit(event) {
+  function handleFormSubmit(event) {
     event.preventDefault();
     fetch("http://localhost:3001/api/v1/user/login", {
       method: "post",

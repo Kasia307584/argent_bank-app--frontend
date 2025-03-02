@@ -10,7 +10,7 @@ export default function EditNameForm({ setEditing }) {
   const userName = useSelector((store) => store.userData);
   const dispatch = useDispatch();
 
-  async function handleFormSubmit(event) {
+  function handleFormSubmit(event) {
     event.preventDefault();
     fetch("http://localhost:3001/api/v1/user/profile", {
       method: "put",
