@@ -25,7 +25,7 @@ Users should be able to:
 
 - Live Site URL: [See the live page here](https://argent-bank-snowy.vercel.app/)
 - Backend Repository: [Forked backend used in this project](https://github.com/Kasia307584/argent_bank-app--backend.git)
-- API Transactions Documentation: [View the API proposal here](./api/api-transactions.yaml)
+- API Transactions Documentation: [View the API proposal here](./api-docs/api-transactions.yaml)
 
 ## My process
 
@@ -44,8 +44,11 @@ Users should be able to:
 - Interacting with APIs based on provided by the backend Swagger UI documentation and testing API calls with Postman.
 - Handling token-based user authentication and authorization.
 - Installing and running a provided backend from a forked repository, populating a MongoDB database, and interacting with it using MongoDB Compass.
-- Designing a REST API for handling transactions using: - Swagger methodology to define the API structure, - OpenAPI extention in VS Code to facilitate writing, - Swagger UI to visualize the API.
-  [View the API proposal here](./api-docs/api-transactions.yaml)
+- Designing a REST API for handling transactions using:
+  - Swagger methodology to define the API structure,
+  - OpenAPI extention in VS Code to facilitate writing,
+  - Swagger UI to visualize the API.
+    [View the API proposal here](./api-docs/api-transactions.yaml)
 - Managing the application state globally using Redux Toolkit and React Redux, allowing access and updates to the Redux store with the `useDispatch` and `useSelector` hooks.
 - Using React Router hooks like `useNavigate`, `useOutletContext`, and a custom hook `useSignMethod` for enhanced sign-in functionality.
 - Using NVM to switch Node.js versions for different parts of the project (front-end and back-end).
