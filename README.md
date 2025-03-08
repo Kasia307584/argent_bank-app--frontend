@@ -33,6 +33,7 @@ Users should be able to:
 
 - **React.js** for building the user interface
 - **React Router** for managing navigation and routing between pages
+- **REST API** for fetching and interacting with server data
 - **Redux Toolkit** and **React Redux** for managing global state in a React environment
 - **CSS3** and **BEM methodology** for styling and maintainable code structure
 - **Vite** for fast development and optimized builds
@@ -40,11 +41,12 @@ Users should be able to:
 
 ### What I learned
 
-- Interacting with APIs based on provided Swagger UI documentation and testing API calls with Postman.
+- Interacting with APIs based on provided by the backend Swagger UI documentation and testing API calls with Postman.
 - Handling token-based user authentication and authorization.
-- Designing a REST API for handling transactions using the Swagger methodology to define the API structure, the OpenAPI extention in VS Code to facilitate writing, and Swagger UI to visualize the API. [View the API proposal here](./api/api-transactions.yaml).
+- Installing and running a provided backend from a forked repository, populating a MongoDB database, and interacting with it using MongoDB Compass.
+- Designing a REST API for handling transactions using: - Swagger methodology to define the API structure, - OpenAPI extention in VS Code to facilitate writing, - Swagger UI to visualize the API.
+  [View the API proposal here](./api-docs/api-transactions.yaml)
 - Managing the application state globally using Redux Toolkit and React Redux, allowing access and updates to the Redux store with the `useDispatch` and `useSelector` hooks.
-- Installing the provided backend, populating a MongoDB database, and interacting with it using MongoDB Compass.
 - Using React Router hooks like `useNavigate`, `useOutletContext`, and a custom hook `useSignMethod` for enhanced sign-in functionality.
 - Using NVM to switch Node.js versions for different parts of the project (front-end and back-end).
 - Initializing the application using Vite.
